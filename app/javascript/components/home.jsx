@@ -17,6 +17,13 @@ export default() => (
         >
           View Recipes
         </Link>
+        <Link
+          to="/login"
+          className="btn btn-lg custom-button"
+          role="button"
+        >
+          Login
+        </Link>
       </div>
     </div>
   </div>

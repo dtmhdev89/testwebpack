@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import { getToken } from '../utils/common';
 
 class Recipes extends React.Component {
   constructor(props) {
@@ -11,9 +12,10 @@ class Recipes extends React.Component {
 
   componentDidMount() {
     const url = "http://localhost:3001/recipes";
+    const authorize = "Bearer " + getToken();
     const headers = new Headers({
       "Content-Type": "application/json",
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.eqLxff7uXl8Xmo-Jc7aVrLKJU7ICdjAeCmWD3Mkahrs"
+      "Authorization": authorize
     });
     fetch(url, {
       method: "get",
