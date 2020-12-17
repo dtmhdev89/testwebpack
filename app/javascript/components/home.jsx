@@ -24,6 +24,13 @@ export default() => (
         >
           Login
         </Link>
+        <Link
+          to="/qrcode"
+          className="btn btn-lg custom-button"
+          role="button"
+        >
+          Qrcode
+        </Link>
       </div>
     </div>
   </div>
