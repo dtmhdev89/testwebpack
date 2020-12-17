@@ -10,7 +10,7 @@ class Recipes extends React.Component {
     }
   }
 
-  componentDidMount() {
+  fetchData() {
     const url = "http://localhost:3001/recipes";
     const authorize = "Bearer " + getToken();
     const headers = new Headers({
@@ -27,8 +27,14 @@ class Recipes extends React.Component {
         }
         throw new Error("Network response was not ok");
       })
-      .then(response => this.setState({recipes: response}))
+      .then(response => {
+        this.setState({recipes: response});
+      })
       .catch(() => this.props.history.push("/"));
+  }
+
+  componentDidMount() {
+    this.fetchData();
   }
 
   render() {
