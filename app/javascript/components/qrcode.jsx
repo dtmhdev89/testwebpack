@@ -17,5 +17,8 @@ export default() => (
         />
       </div>
     </header>
+    <div>
+      <Link to="/" className="btn btn-link">Home</Link>
+    </div>
   </div>
 )
